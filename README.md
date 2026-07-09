@@ -1,6 +1,6 @@
 # 🏢 Enterprise Data Governance & Data Quality Framework
 
-![Enterprise Data Quality Dashboard](images/Dashboard_Screenshot.png)
+![Enterprise Data Quality Dashboard](images/Dashboard_Screenshot.png) 
 
 ## 📖 Overview
 
