@@ -1,121 +1,90 @@
 # 🏢 Enterprise Data Governance & Data Quality Framework
 
-An end-to-end enterprise data governance and data quality project built using SQL, SQLite, Power BI, and governance documentation.
+![Power BI Dashboard](powerbi/Dashboard_Screenshot.png)
 
-This project demonstrates how organizations can establish a structured Data Governance Framework, define Data Quality Rules, identify data quality issues through SQL validation, and monitor data health using an executive Power BI dashboard.
+## 📖 Overview
+
+This project demonstrates how an organization can implement an enterprise Data Governance and Data Quality framework to improve the accuracy, consistency, and reliability of customer master data.
+
+The solution combines governance documentation, SQL-based data quality validation, and an executive Power BI dashboard to monitor data quality KPIs.
 
 ---
 
-# 📌 Business Problem
+## 🎯 Business Problem
 
-RetailMax Ltd. stores customer information across multiple business systems.
-
-Over time, poor data quality has resulted in:
+RetailMax Ltd. maintains customer data across multiple business systems. Over time, poor data quality introduced several issues:
 
 - Duplicate customer records
-- Invalid email addresses
-- Incorrect phone numbers
+- Invalid phone numbers
+- Invalid customer status values
 - Future dates of birth
-- Missing mandatory information
-- Invalid customer statuses
+- Missing mandatory attributes
 
-Poor-quality customer data impacts:
-
-- Customer communication
-- Regulatory compliance
-- Business reporting
-- Marketing campaigns
-- Customer analytics
-
-This project demonstrates how Data Governance and Data Quality processes can be implemented to solve these challenges.
+These issues reduce reporting accuracy, affect customer communication, and increase operational risk.
 
 ---
 
-# 🎯 Project Objectives
+## 🚀 Solution
 
-- Build a Data Governance Framework
-- Define Data Owners and Stewards
-- Create governance documentation
-- Develop Data Quality Rules
-- Validate customer data using SQL
-- Measure data quality KPIs
-- Visualize results in Power BI
-
----
-
-# 🛠 Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| SQLite | Database |
-| SQL | Data Quality Validation |
-| Power BI | Dashboard & Reporting |
-| Excel | Governance Documentation |
-| Git | Version Control |
-| GitHub | Portfolio Repository |
-
----
-
-# 📂 Project Structure
+This repository demonstrates an end-to-end approach:
 
 ```
+Customer Dataset
+        │
+        ▼
+SQLite Database
+        │
+        ▼
+SQL Data Quality Validation
+        │
+        ▼
+Governance Documentation
+        │
+        ▼
+Power BI Executive Dashboard
+```
+
+---
+
+## 🛠 Tech Stack
+
+- SQLite
+- SQL
+- Power BI
+- DAX
+- Excel
+- Git
+- GitHub
+
+---
+
+## 📁 Repository Structure
+
+```text
 enterprise-data-governance-data-quality-framework
 │
-├── database/
-│
-├── datasets/
-│
-├── diagrams/
-│
-├── docs/
-│
-├── images/
-│
-├── powerbi/
-│
-├── sql/
-│
+├── database
+├── datasets
+├── docs
+├── powerbi
+├── sql
 └── README.md
 ```
 
 ---
 
-# 📁 Repository Contents
-
-## Database
-
-- Customer Master Table
-- SQLite Database
-
-## SQL
-
-- Customer table creation
-- Data Quality Validation Queries
-
-Checks include:
-
-- Duplicate Customers
-- Missing Emails
-- Invalid Emails
-- Invalid Phone Numbers
-- Future Date of Birth
-- Missing Country
-- Invalid Customer Status
-
----
-
-## Governance Documentation
+## 📚 Governance Documents
 
 - Business Problem Statement
 - Current State Assessment
 - Governance Operating Model
 - Data Quality Rules
-- Data Quality Assessment
-- Data Quality Dashboard Documentation
+- Data Quality Assessment Report
+- Dashboard Documentation
 
 ---
 
-## Data Governance Artifacts
+## 📊 Data Governance Artifacts
 
 - Data Inventory
 - Business Glossary
@@ -124,9 +93,40 @@ Checks include:
 
 ---
 
-## Power BI Dashboard
+## 🗄 Database
 
-Executive dashboard containing:
+SQLite Customer Master database containing intentionally introduced data quality issues for validation.
+
+---
+
+## 🔍 SQL Data Quality Checks
+
+Implemented validation rules for:
+
+- Duplicate Customers
+- Invalid Phone Numbers
+- Invalid Email Addresses
+- Future Date of Birth
+- Missing Country
+- Invalid Customer Status
+
+Example:
+
+```sql
+SELECT Customer_ID,
+       COUNT(*)
+FROM Customer_Master
+GROUP BY Customer_ID
+HAVING COUNT(*) > 1;
+```
+
+---
+
+## 📈 Power BI Dashboard
+
+The dashboard provides executive-level monitoring of customer data quality.
+
+### KPIs
 
 - Total Records
 - Duplicate Customers
@@ -135,112 +135,64 @@ Executive dashboard containing:
 - Future DOB
 - Missing Country
 - Pass Rate
-- Passed vs Failed Checks
+
+### Visuals
+
+- KPI Cards
+- Overall Data Quality Status
 - Data Quality Issues by Rule
-- Exception Records
+- Pass Rate Gauge
+- Exception Records Table
 
 ---
 
-# 📊 Dashboard Preview
-Dashboard_Screenshot.png
-
-```
-
----
-
-# 🔍 SQL Data Quality Checks
-
-Example:
-
-```sql
-SELECT Customer_ID,
-COUNT(*)
-FROM Customer_Master
-GROUP BY Customer_ID
-HAVING COUNT(*) > 1;
-```
-
-Additional checks include:
-
-- NULL validation
-- Pattern validation
-- Range validation
-- Duplicate detection
-- Business rule validation
-
----
-
-# 📈 Key Metrics
-
-| KPI | Value |
-|------|-------|
-| Total Records | 20 |
-| Duplicate Customers | 1 |
-| Invalid Phone Numbers | 1 |
-| Invalid Emails | 0 |
-| Future DOB | 1 |
-| Missing Country | 0 |
-| Pass Rate | 40% |
-
----
-
-# 🎯 Skills Demonstrated
+## 💼 Skills Demonstrated
 
 ### Data Governance
 
-- Data Governance Framework
+- Governance Framework Design
 - Data Stewardship
 - Data Ownership
 - Governance Documentation
-- Data Standards
 
 ### Data Quality
 
 - Data Profiling
 - Data Validation
-- Data Cleansing Rules
-- Data Quality Assessment
 - Data Quality Monitoring
+- Business Rule Validation
 
 ### SQL
 
+- Aggregate Functions
 - GROUP BY
 - HAVING
-- CASE
 - Pattern Matching
-- NULL Handling
-- Aggregate Functions
+- NULL Validation
 
 ### Power BI
 
-- DAX Measures
-- KPI Cards
-- Gauge Charts
-- Donut Charts
-- Bar Charts
-- Data Modelling
+- DAX
+- KPI Design
+- Dashboard Development
+- Executive Reporting
 
 ---
 
-# 🚀 Future Enhancements
+## 🔮 Future Enhancements
 
-- Automated Data Quality Monitoring
 - Azure Data Factory Integration
 - Microsoft Purview Integration
-- Collibra Governance Integration
+- Collibra Integration
+- Automated Data Quality Monitoring
 - Power BI Service Deployment
-- Scheduled Refresh
-- Data Quality Scorecards
 
 ---
 
-# 👨‍💻 Author
+## 👤 Author
 
 **Gourav Dutta**
 
-Data Analyst | Data Governance | Data Quality | Power BI | SQL
+Data Analyst | Data Governance | Data Quality | SQL | Power BI
 
-
-
-GitHub:
-https://github.com/gouravinsights
+🔗 GitHub: https://github.com/gouravinsights
