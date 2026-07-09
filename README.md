@@ -142,11 +142,8 @@ Executive dashboard containing:
 ---
 
 # 📊 Dashboard Preview
+Dashboard_Screenshot.png
 
-*(Insert Dashboard Screenshot here)*
-
-```
-powerbi/Dashboard_Screenshot.png
 ```
 
 ---
